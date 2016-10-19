@@ -11,7 +11,9 @@ var myController = function ($scope) {
     var employee = {
         firstName: 'Scott',
         lastName: 'Allen',
-        Age:25
+        Age: 25,
+        country: 'USA',
+        path:"../Images/USA.png"
     }
 
     $scope.employee = employee;
