@@ -6,7 +6,15 @@ var myApp = angular.module("myModule", [])
 
 //Create the controller
 var myController = function ($scope) {
-    $scope.message = "My first Angular Controller";
+  //  $scope.message = "My first Angular Controller";
+
+    var employee = {
+        firstName: 'Scott',
+        lastName: 'Allen',
+        Age:25
+    }
+
+    $scope.employee = employee;
 }
 
 //Register the controller with the module
