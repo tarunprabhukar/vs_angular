@@ -66,6 +66,7 @@ var myController = function ($scope) {
         technology.dislikes++;
     };
     $scope.rowLimit = 2;
+   // $scope.sortBy = "-name";
 }
 
 //Register the controller with the module

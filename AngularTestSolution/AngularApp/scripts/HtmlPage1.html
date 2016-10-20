@@ -10,6 +10,10 @@
 <body ng-controller="myController">
   <div>  
       Rows to display : <input type="number" step="1" min="1" max="5" ng-model="rowLimit" />                                                           <!--used ng-click and limit-->
+      Sort in order :<select ng-model="sortColumn">                                                                                                    <!-- used orderBy-->
+            <option value="+name">Name</option>
+            <option value="-likes">Likes</option>        
+            </select>
       <table>
               <thead>
                   <tr>
@@ -20,7 +24,7 @@
                   </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="technology in technologies|limitTo:rowLimit">
+              <tr ng-repeat="technology in technologies|limitTo:rowLimit|orderBy:sortColumn">
                   <td>{{technology.name}}</td>
                   <td>{{technology.likes}}</td>
                   <td>{{technology.dislikes}}</td>
