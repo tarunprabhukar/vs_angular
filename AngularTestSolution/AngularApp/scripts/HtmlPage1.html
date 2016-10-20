@@ -48,17 +48,26 @@
         </li>
     </ul>
         </div>
-    <div>
-        firstname: {{employee.firstName}}
+    <div>                                                           <!--used filters-->
+        firstname: {{employee.firstName|uppercase}}
     </div>
     <div>
-        lastName: {{employee.lastName}}
+        lastName: {{employee.lastName|lowercase}}
     </div>
     <div>
         age:  {{employee.Age}}
     </div> 
     <div>
         country : {{employee.nation}}
+    </div>
+    <div>
+        salary :{{employee.salary|number:2}}
+    </div>
+    <div>
+        currency:{{employee.salary_curr|currency:"$":1}}
+    </div>
+    <div>
+        date:{{employee.date|date:"dd/MM/YYYY"}}
     </div>
     <div>
         <img ng-src="{{employee.path}}" />         <!--ng-src implementation-->

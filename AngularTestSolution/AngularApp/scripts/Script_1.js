@@ -49,6 +49,9 @@ var myController = function ($scope) {
         firstName: 'Scott',
         lastName: 'Allen',
         Age: 25,
+        salary: 2800.9999,
+        salary_curr: 2800.9999,
+        date:12/22/2018,
         nation: 'USA',
         path: "../Images/USA.png"             // Path Declaration
     };
