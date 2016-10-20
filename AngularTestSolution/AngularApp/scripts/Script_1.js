@@ -8,15 +8,39 @@ var myApp = angular.module("myModule", [])
 var myController = function ($scope) {
   //  $scope.message = "My first Angular Controller";
 
+    var countries = [
+                {
+                    name: 'USA',
+                    cities: [
+                        { name:'pittsburgh' },
+                        { name:'tempe' },
+                        { name:'dallas' }
+                    ]
+                },
+                {
+                    name: 'India',
+                    cities: [
+                        { name:'hyderabad' },
+                        { name:'chennai' },
+                        { name:'delhi' }
+                    ]
+
+                }
+
+
+    ];
+
+
     var employee = {
         firstName: 'Scott',
         lastName: 'Allen',
         Age: 25,
-        country: 'USA',
-        path:"../Images/USA.png"
-    }
+        nation: 'USA',
+        path: "../Images/USA.png"             // Path Declaration
+    };
 
     $scope.employee = employee;
+    $scope.countries = countries;
 }
 
 //Register the controller with the module

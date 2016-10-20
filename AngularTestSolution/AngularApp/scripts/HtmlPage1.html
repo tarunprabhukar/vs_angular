@@ -8,6 +8,18 @@
     <script src="Script_1.js"></script>
 </head>
 <body ng-controller="myController">
+    <div>                                                                                   <!--Used ng-init and ng-repeat-->
+    <ul>
+        <li ng-repeat="country in countries" ng-init="parentIndex=$index">
+            {{country.name}}
+            <ul>
+                <li ng-repeat="city in country.cities">
+                    {{city.name}}  ParentIndex={{parentIndex}} Index={{ $index }}
+                </li>
+            </ul>
+        </li>
+    </ul>
+        </div>
     <div>
         firstname: {{employee.firstName}}
     </div>
@@ -18,13 +30,13 @@
         age:  {{employee.Age}}
     </div> 
     <div>
-        country : {{employee.country}}
+        country : {{employee.nation}}
     </div>
     <div>
-        <img ng-src="{{employee.path}}" />
+        <img ng-src="{{employee.path}}" />         <!--ng-src implementation-->
     </div>
     <div>
-        <input type="text" ng-model="greet" />
+        <input type="text" ng-model="greet" />      <!--Two way data binding implemented-->
         {{greet}}
     </div>
     <div>
