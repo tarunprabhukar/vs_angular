@@ -8,7 +8,35 @@
     <script src="Script_1.js"></script>
 </head>
 <body ng-controller="myController">
-    <div>                                                                                   <!--Used ng-init and ng-repeat-->
+  <div>                                                             <!--used ng-click-->
+      <table>
+              <thead>
+                  <tr>
+                      <td>technology</td>
+                      <td>likes</td>
+                      <td>dislikes</td>
+                      <td>like/dislike</td>
+                  </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="technology in technologies">
+                  <td>{{technology.name}}</td>
+                  <td>{{technology.likes}}</td>
+                  <td>{{technology.dislikes}}</td>
+                  <td>
+                      <input type="button" value="Like"  ng-click="incrementLikes(technology)" />
+                      <input type="button" value="DisLike" ng-click="incrementDisLikes(technology)" />
+                  </td>
+
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+
+
+
+      <div>                                                                                   <!--Used ng-init and ng-repeat-->
     <ul>
         <li ng-repeat="country in countries" ng-init="parentIndex=$index">
             {{country.name}}

@@ -30,7 +30,21 @@ var myController = function ($scope) {
 
     ];
 
+    var technologies = [
+        {
+            name: 'C#',
+            likes: 0,
+            dislikes: 0
 
+        },
+        {
+            name: 'Java',
+            likes: 0,
+            dislikes: 0
+        }
+    ];
+
+    
     var employee = {
         firstName: 'Scott',
         lastName: 'Allen',
@@ -41,6 +55,13 @@ var myController = function ($scope) {
 
     $scope.employee = employee;
     $scope.countries = countries;
+    $scope.technologies = technologies;
+    $scope.incrementLikes = function (technology) {
+        technology.likes++;
+    };
+    $scope.incrementDisLikes = function (technology) {
+        technology.dislikes++;
+    };
 }
 
 //Register the controller with the module
