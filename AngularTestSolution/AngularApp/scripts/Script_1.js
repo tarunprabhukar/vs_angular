@@ -65,6 +65,7 @@ var myController = function ($scope) {
     $scope.incrementDisLikes = function (technology) {
         technology.dislikes++;
     };
+    $scope.rowLimit = 2;
 }
 
 //Register the controller with the module
