@@ -8,6 +8,9 @@
     <script src="Script_1.js"></script>
 </head>
 <body ng-controller="myController">
+    <div>
+        Search:<input type="text" placeholder="Search technologies" ng-model="searchText" />
+    </div>
   <div>  
       Rows to display : <input type="number" step="1" min="1" max="5" ng-model="rowLimit" />                                                           <!--used ng-click and limit-->
       Sort in order :<select ng-model="sortColumn">                                                                                                    <!-- used orderBy-->
@@ -24,7 +27,7 @@
                   </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="technology in technologies|limitTo:rowLimit|orderBy:sortColumn">
+              <tr ng-repeat="technology in technologies|limitTo:rowLimit|orderBy:sortColumn|filter:searchText">
                   <td>{{technology.name}}</td>
                   <td>{{technology.likes}}</td>
                   <td>{{technology.dislikes}}</td>
