@@ -9,6 +9,27 @@
 </head>
 <body ng-controller="myController">
     <div>
+        <table>
+            <thead>
+                <tr>
+                <td>Id</td>
+                <td>Age</td>
+                <td>JoiningDate</td>
+                <td>name</td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="emp in employeelist">
+                    <td>{{emp.ID}}</td>
+                    <td>{{emp.Age}}</td>
+                    <td>{{emp.JoiningDate|date:"dd:MM:YYYY"}}</td>
+                    <td>{{emp.name|uppercase}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div ng-include="embed"></div>
+    <div>
         Search:<input type="text" placeholder="Search technologies" ng-model="searchText" />
     </div>
     <div>

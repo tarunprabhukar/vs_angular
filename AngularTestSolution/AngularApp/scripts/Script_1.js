@@ -5,8 +5,12 @@
 var myApp = angular.module("myModule", [])
 
 //Create the controller
-var myController = function ($scope) {
+var myController = function ($scope,$http) {
   //  $scope.message = "My first Angular Controller";
+
+    $http.post('http://localhost:52960/EmployeeService.asmx/GetEmployees').then(function (response) {
+        $scope.employeelist = response.data;
+    });
 
     var countries = [
                 {
@@ -79,6 +83,7 @@ var myController = function ($scope) {
         }
         return false;
     }
+    $scope.embed = "Embed.html";
    // $scope.sortBy = "-name";
 }
 
