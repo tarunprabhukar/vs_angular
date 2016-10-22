@@ -66,6 +66,19 @@ var myController = function ($scope) {
         technology.dislikes++;
     };
     $scope.rowLimit = 2;
+
+
+    $scope.search = function (item) {
+        if ($scope.searchText2 == undefined) {
+            return true;
+        }
+        else
+        {
+            if (item.name.toLowerCase().indexOf($scope.searchText2.toLowerCase()) != -1)
+                return true;
+        }
+        return false;
+    }
    // $scope.sortBy = "-name";
 }
 

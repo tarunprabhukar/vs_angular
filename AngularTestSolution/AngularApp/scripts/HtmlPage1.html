@@ -11,6 +11,9 @@
     <div>
         Search:<input type="text" placeholder="Search technologies" ng-model="searchText" />
     </div>
+    <div>
+        Targeted Search:<input type="text" placeholder="Search technology" ng-model="searchText2" />
+    </div>
   <div>  
       Rows to display : <input type="number" step="1" min="1" max="5" ng-model="rowLimit" />                                                           <!--used ng-click and limit-->
       Sort in order :<select ng-model="sortColumn">                                                                                                    <!-- used orderBy-->
@@ -27,7 +30,7 @@
                   </tr>
           </thead>
           <tbody>
-              <tr ng-repeat="technology in technologies|limitTo:rowLimit|orderBy:sortColumn|filter:searchText">
+              <tr ng-repeat="technology in technologies|limitTo:rowLimit|orderBy:sortColumn|filter:search|filter:searchText">
                   <td>{{technology.name}}</td>
                   <td>{{technology.likes}}</td>
                   <td>{{technology.dislikes}}</td>
