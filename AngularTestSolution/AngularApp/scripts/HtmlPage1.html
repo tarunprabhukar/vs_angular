@@ -14,6 +14,9 @@
     <div>
         Targeted Search:<input type="text" placeholder="Search technology" ng-model="searchText2" />
     </div>
+    <div>
+        <input type="checkbox" ng-model="check" />Check to Hide
+    </div>
   <div>  
       Rows to display : <input type="number" step="1" min="1" max="5" ng-model="rowLimit" />                                                           <!--used ng-click and limit-->
       Sort in order :<select ng-model="sortColumn">                                                                                                    <!-- used orderBy-->
@@ -24,7 +27,8 @@
               <thead>
                   <tr>
                       <td>technology</td>
-                      <td>likes</td>
+                      <td ng-hide="check">likes</td>
+                      <td ng-show="check">likes</td>
                       <td>dislikes</td>
                       <td>like/dislike</td>
                   </tr>
@@ -32,7 +36,8 @@
           <tbody>
               <tr ng-repeat="technology in technologies|limitTo:rowLimit|orderBy:sortColumn|filter:search|filter:searchText">
                   <td>{{technology.name}}</td>
-                  <td>{{technology.likes}}</td>
+                  <td ng-hide="check">{{technology.likes}}</td>
+                  <td ng-show="check">$$$$</td>
                   <td>{{technology.dislikes}}</td>
                   <td>
                       <input type="button" value="Like"  ng-click="incrementLikes(technology)" />
