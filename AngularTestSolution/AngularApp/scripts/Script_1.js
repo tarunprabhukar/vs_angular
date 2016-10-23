@@ -1,15 +1,19 @@
 ﻿/// <reference path="angular.js" />
-/// <reference path="angular.min.js" />
+
 
 //Create the module
 var myApp = angular.module("myModule", [])
 
 //Create the controller
-var myController = function ($scope,$http) {
+var myController = function ($scope,$http,$log) {
   //  $scope.message = "My first Angular Controller";
 
-    $http.post('http://localhost:52960/EmployeeService.asmx/GetEmployees').then(function (response) {
+    $http.post('http://localhost:52960/EmployeeService.asmx/GetEmployee').then(function (response) {
         $scope.employeelist = response.data;
+        $log.info(response);
+    }, function (response) {
+        $scope.error = response.data;
+        $log.info(response);
     });
 
     var countries = [
