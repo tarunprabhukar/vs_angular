@@ -10,6 +10,9 @@
 </head>
 <body ng-controller="myController">
     <div>
+        <input type="button"  value="move to bottom" id="top" ng-click="move('bottom') " />
+    </div>
+    <div>
         Input:<input type="text" ng-model="input" />
         ProcessedWord:<input type="text" ng-model="output" />
         <input type="button" ng-click="transformString(input)" />
@@ -133,6 +136,9 @@
     </div>
     <div>
         {{ ['a','b','c'][2]   }}
+    </div>
+    <div>
+        <input type="button" value="move to top" id="bottom" ng-click="move('top')" />
     </div>
 </body>
 </html>

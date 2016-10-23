@@ -5,8 +5,14 @@
 var myApp = angular.module("myModule", [])
 
 //Create the controller
-var myController = function ($scope,$http,$log,WordService) {
+var myController = function ($scope,$http,$log,WordService,$location,$anchorScroll) {
   //  $scope.message = "My first Angular Controller";
+
+    $scope.move = function (scrollLocation) {
+        $location.hash(scrollLocation);
+        $anchorScroll.yOffset = 20;
+        $anchorScroll();
+    }
 
     $scope.transformString = function (input) {
 
