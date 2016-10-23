@@ -103,6 +103,7 @@
     </Content>
     <Content Include="scripts\Embed.html" />
     <Content Include="scripts\Script_1.js" />
+    <Content Include="scripts\WordService.js" />
     <Content Include="Service References\Application Insights\ConnectedService.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

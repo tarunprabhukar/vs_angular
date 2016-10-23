@@ -5,10 +5,16 @@
 var myApp = angular.module("myModule", [])
 
 //Create the controller
-var myController = function ($scope,$http,$log) {
+var myController = function ($scope,$http,$log,WordService) {
   //  $scope.message = "My first Angular Controller";
 
-    $http.post('http://localhost:52960/EmployeeService.asmx/GetEmployee').then(function (response) {
+    $scope.transformString = function (input) {
+
+        $scope.output = WordService.processWord(input);
+
+    };
+
+    $http.post('http://localhost:52960/EmployeeService.asmx/GetEmployees').then(function (response) {
         $scope.employeelist = response.data;
         $log.info(response);
     }, function (response) {
